@@ -5,7 +5,7 @@ import skills
 import  agent_class
 
 ##-------------------------- Scrapping data  ---------------------------------------##
-# scraper.login('sintcaddesigning@gmail.com','Note7@484')
+# scraper.login('username@gmail.com','password')
 
 
 # all_links =  scraper.get_links(1)
