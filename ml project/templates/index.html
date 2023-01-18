@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+{% block title %}Skill{% endblock title %}Skill
+{% block skill %}active{% endblock skill %}
+{% block body %}
+    <!-- <h1>Job Search</h1> -->
+    <form action="/home" method="POST">
+    <div class="job_search">
+        <button class="header_head">Search your Skill</button>
+        <div class="search_box">
+            <input type="text" name="skill" placeholder= "{{data['placeholder']}}">
+            <button class="search" type="submit">Search</button>
+            <button class="all_jobs" type="submit", formaction="/skilldetails">All jobs</button>
+        </div>
+    </div>
+    </form>
+
+    <div class="results">
+        <div class="result_box">
+            <p>Most Common Expereince Level</p>
+            <h1>{{data['mcel']}}</h1>
+        </div>
+        <div class="result_box">
+            <p>Most Common Industry Type</p>
+            <h1>{{data['mci']}}</h1>
+        </div>
+        <div class="result_box">
+            <p>Most Common Company Class</p>
+            <h1>{{data['mccc']}}</h1>
+        </div>
+        <div class="result_box">
+            <p>Total Number Of Jobs Available</p>
+            <h1>{{data['tn']}}</h1>
+        </div>
+    </div>
+
+    <div class="all_job_parent">
+        {% for row in details %}
+        <div class="job_parent">
+            <div class="job_child">
+                <h1>Company: <span>{{row['company']}}</span></h1>
+                <h3>Job Title: <span>{{row['Job_title']}}</span>
+                     | Job Type: <span>{{row['involment']}} ({{row['level']}})</span>
+                     | Industry: <span>{{row['industry']}}</span>
+                </h3>
+                <h4>Applicants: <span>{{row['application_1']}}</span>
+                     | Followers: <span>{{row['followers']}}</span>
+                     | Employees: <span>{{row['employees']}}</span>
+                     | Location: <span>{{row['city']}}, {{row['state']}}, {{row['country']}}</span>
+                </h4>
+            </div>
+            <div> <button class="apply_btn">Apply Now</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endblock body %}

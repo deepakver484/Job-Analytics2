@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/index.css">
+    <title>Analytics | {% block title %}{% endblock title %}</title></title>
+  </head>
+</div>
+<body >
+  <!-- nav bar start-->
+  <div class="navbar">
+    <ul>
+      <li class="{% block dashboard %}{% endblock dashboard %}" >
+        <i class="fa-brands fa-readme"></i><a href="/dashboard">DashBoard</a>
+      </li>
+      <li class="{% block job %}{% endblock job %}" >
+        <a href="/job"><i class="fa-solid fa-briefcase"></i>Job Search</a>
+      </li>
+      <li class="{% block skill %}{% endblock skill %}" >
+        <a href="/home"><i class="fa-solid fa-pen-nib"></i>Skill Search</a>
+      </li>
+      <li class="{% block about %}{% endblock about %}" >
+        <a href="/about"><i class="fa-solid fa-user"></i>About us</a>
+      </li>
+      <li class="{% block contact %}{% endblock contact %}" >
+        <a href="#"><i class="fa-solid fa-address-card"></i>Contact us</a>
+      </li>
+    </ul>
+  </div>
+  <!-- nav bar End-->
+  {% block body %}{% endblock body %}
+  <script src="https://kit.fontawesome.com/a0a7b6f074.js" crossorigin="anonymous"></script>
+</body>
+</html>
