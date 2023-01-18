@@ -32,5 +32,5 @@ all_data.drop(columns = ['applicants_1', 'applicants_2', 'active', 'location', '
 
 ##------------------------- save final data into csv ------------------------------##
 
-all_data.to_csv('C:/Users/DEEPAK VERMA/Desktop/ml project/final_all_data.csv')
+all_data.to_csv('C:/Users/DEEPAK VERMA/Desktop/ml project/final_job_data.csv')
     
