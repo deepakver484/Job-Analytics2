@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, 'C:/Users/DEEPAK VERMA/Desktop/ml project/backend')
 from data_dao import skill_job, skill_details, job_details, job_job
 
-df = pd.read_csv('final_job_data.csv')
+df = pd.read_csv('final_all_data.csv')
 
 df1 = pd.read_csv('users.csv')
 
@@ -56,36 +56,38 @@ def home():
         if object["skill"].lower() not in skills:
             data = {'placeholder' : "Search Relevant Skill"}
         else:
-            data = skill_job(object['skill'].lower(), df)
+            data = skill_job(object['skill'], df)
             if 'placeholder' not in data.keys():
                 data['placeholder'] = object['skill']
-                details = []
+        details = []
         return render_template('index.html', data= data, details= details)
     else:
         data = {"placeholder" :"Search your skills here"}
-        return render_template('index.html', data= data)
+        details = []
+        return render_template('index.html', data= data, details = details)
     
 @app.route('/skilldetails', methods=['POST'])
 def skilldetails():
     object = request.form.to_dict()
-    data = skill_job(object['skill'].lower(), df)
+    data = skill_job(object['skill'], df)
     if 'placeholder' not in data.keys():
         data['placeholder'] = object['skill']
-    details = skill_details(object['skill'].lower(), df)
+    details = skill_details(object['skill'], df)
     return render_template('index.html', data = data, details = details)
     
 @app.route('/job', methods=['GET', 'POST'])
 def job():
     if request.method == 'POST':
         object = request.form.to_dict()
-        data = job_job(object['job'].lower(), df)
+        data = job_job(object['job'], df)
         if 'placeholder' not in data.keys():
             data['placeholder'] = object['job']
-            details = []
+        details = []
         return render_template('job.html', data= data, details= details)
     else:
         data = {"placeholder" :"Search your Job Title here"}
-        return render_template('job.html', data= data)
+        details = []
+        return render_template('job.html', data= data, details = details)
 
 
    
@@ -93,10 +95,10 @@ def job():
 def jobdetails():
     object = request.form.to_dict()
     print(object)
-    data = job_job(object['job'].lower(), df)
+    data = job_job(object['job'], df)
     if 'placeholder' not in data.keys():
         data['placeholder'] = object['job']
-    details = job_details(object['job'].lower(), df)
+    details = job_details(object['job'], df)
     return render_template('job.html', data = data, details= details)
 
 @app.route('/dashboard')

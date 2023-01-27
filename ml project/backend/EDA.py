@@ -166,5 +166,6 @@ def eda_full(dataframe):
     all_data =   fol(all_data)
     all_data = industry(all_data)
     all_data =  app(all_data)
+    all_data[all_data['job_description'] == ''] = 'Not-given'
     return all_data
 

@@ -46,11 +46,7 @@ def skills_apply(data):
     data["Clean_skills"] = data['job_description'].apply(update_jd)
     data["skills"] = data["Clean_skills"].str.lower().apply(get_skills)
     data["skills"] = data["skills"].apply(unique_skills)
+    data[data['skills'] == ''] = 'Not-found'
     return data
 
-def log_skills():
-    log_text = f'''skills extracted successfully done........
-    ------------------------------------------------
-    '''
-    return log_text
-    
+

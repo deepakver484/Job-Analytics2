@@ -22,8 +22,3 @@ def job_class(data):
     data['job_class'] = data['job_class'].map({0:'Class 1',1:'Class 2',2: 'Class 3',3: 'Class 4'})
     return data
     
-def log_class():
-    log_text = f'''Class added successfully done........
-    ------------------------------------------------
-    '''
-    return log_text
