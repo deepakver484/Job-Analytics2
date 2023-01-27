@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock title %}
+
+{% block about %}active{% endblock about %}
+
+  
+{% block body %}    
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p>Some text about who we are and what we do.</p>
+  <p>Resize the browser window to see that this page is responsive by the way.</p>
+</div>
+
+
+<h2 class="our" style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{{url_for('static', filename='deepak.jpg')}}" alt="Deepak" >
+      <div class="container">
+        <h2>Deepak Kumar Verma</h2>
+        <p class="title">Co-Contributer</p>
+        <p>Web app devloper and Data Expert</p>
+        <p>deepakkumarverma484@gmail.com</p>
+        <p><a class="btn_about" href= "https://www.linkedin.com/in/deepakkumarverma484" >Contact</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{{url_for('static', filename='Sachin.jpg')}}" alt="Sachin">
+      <div class="container">
+        <h2>Sachin Sharma</h2>
+        <p class="title">Co-Contributer</p>
+        <p>Data and Visualization Expert</p>
+        <p>sachinshrma03@gmail.com</p>
+        <p><a class="btn_about" href= "https://www.linkedin.com/in/sachin-kumar-73b253152" >Contact</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{{url_for('static', filename='abhi.jpg')}}" alt="Abhishek">
+      <div class="container">
+        <h2>Abhishek Ranjan</h2>
+        <p class="title">Co-Contributer</p>
+        <p>Data Analysis expert</p>
+        <p>abhi.0903@yahoo.com</p>
+        <p><a class="btn_about" href= "http://www.linkedin.com/in/abhishekranjan0903" >Contact</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}
