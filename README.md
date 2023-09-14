@@ -7,6 +7,17 @@ The primary objective of this project is to gather data from LinkedIn profiles a
 
 
 ## TOOLS USED
+<div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/deepakver484/assets/blob/main/icons8-microsoft-sql-server.svg" title="SqlServer" alt="SqlServer" width="40" height="40"/>&nbsp
+  <img src="https://github.com/devicons/devicon/blob/master/icons/flask/flask-original-wordmark.svg" title="Flask" alt="Flask" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/pandas/pandas-original-wordmark.svg" title="Pandas" alt="Pandas" width="40" height="40"/>&nbsp;
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"  title="Sklearn" alt="Sklearn" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/sqlalchemy/sqlalchemy-original-wordmark.svg" title="SqlAlchemy" alt="SqlAlchemy" width="40" height="40"/>&nbsp;
+  <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original-wordmark.svg"  title="Vscode" alt="Vscode" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/deepakver484/assets/blob/main/icons8-tableau-software.svg"  title="Tableau" alt="Tableau" width="40" height="40"/>&nbsp;
+  <div>
 
 
 ##   **User's Manual**
