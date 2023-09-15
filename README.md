@@ -40,7 +40,7 @@ The primary objective of this project is to gather data from LinkedIn profiles a
  
 </div>
 <details>
-  <summary><h2><a href = "https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/scraper.py">Scraper.py</a></h2></summary>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/scraper.py"><strong>Scraper.py</strong></a></summary>
 
 **login(username, passward) :-**
 
@@ -64,7 +64,7 @@ Finally, this function compiles all the extracted information into a dictionary 
 This function takes a list of job listing links, link_list, as input. It then iterates through each link, using the job_info function to extract detailed information about each job listing. The extracted information is organized into dictionaries, and these dictionaries are appended to a data list. Each dictionary contains various attributes related to the job, such as company name, job title, location, industry, and more.
 </details>
 <details>
-  <summary><h2><a href = "https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/EDA.py">EDA.py</a></h2></summary>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/EDA.py"><strong>EDA.py</strong></a></summary>
 
 **city(all_data)** :- This function clean the city column of the data.
 
@@ -92,8 +92,6 @@ This function takes a list of job listing links, link_list, as input. It then it
 
 **eda_full(dataframe)** :- This function will take the raw data and use all the above function of the eda and return cleaned data.
 </details>
-
-
 
 
 
