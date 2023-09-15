@@ -17,9 +17,21 @@ The primary objective of this project is to gather data from LinkedIn profiles a
   <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/>
   <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original-wordmark.svg"  title="Vscode" alt="Vscode" width="40" height="40"/>&nbsp;
   <img src="https://github.com/deepakver484/assets/blob/main/icons8-tableau-software.svg"  title="Tableau" alt="Tableau" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/deepakver484/assets/blob/main/machine-learning-01-svgrepo-com.svg" title="MachineLearning" alt="MachineLearning" width="50" height="50"/>&nbsp;
+  <img src="https://github.com/deepakver484/assets/blob/main/icons8-excel.svg"  title="Excel" alt="Excel" width="50" height="50"/>&nbsp;
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib" width="50" height="50"/>
   <div>
 
 
-##   **User's Manual**
+##  <img src="https://user-images.githubusercontent.com/106439762/181935629-b3c47bd3-77fb-4431-a11c-ff8ba0942b63.gif" width="48" height="48"> **User's Manual**
+| **Files/Folder** | **Description** |
+| ---------------- | --------------- |
+| **[AppInfo](https://github.com/deepakver484/Job-Analytics2/tree/main/ml%20project)** | This folder containing all the files of web app |
+| **[Dashboard & PPT](https://github.com/deepakver484/Job-Analytics2/tree/main/ml%20project/Dashboard%20%26%20PPT)** | This folder contains Dashboard and PPT for the Project |
+| **[Data](https://github.com/deepakver484/Job-Analytics2/tree/main/ml%20project/Data)** | This folder contains all the data files used in the project |
+| **[Backend](https://github.com/deepakver484/Job-Analytics2/tree/main/ml%20project/backend)** | This folder contains all the files related to backend file (scraper, machine learning model, EDA files) |
+| **[Static](https://github.com/deepakver484/Job-Analytics2/tree/main/ml%20project/static)** | This folder contains all the static files used in the web app |
+| **[Templates](https://github.com/deepakver484/Job-Analytics2/tree/main/ml%20project/templates)** | this folder contains all the html files used in the web app |
 
-Scraped data from LinkedIn using Selenium and Beautiful soup. Data cleaning and preprocessing. Analyzed data, extracting insights using SQL and Creating dashboard. Made Web page using flask and html. TECH STACK : Python( Selenium, Flask, Pandas, Sklearn, sqlalchemy, Matplotlib) | Excel | SQL | Tableau | Machine Learning | Power Point
+# Workflow :
+
