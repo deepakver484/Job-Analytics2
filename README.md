@@ -39,39 +39,66 @@ The primary objective of this project is to gather data from LinkedIn profiles a
   <img src="https://github.com/deepakver484/assets/blob/main/Project%20Flow.jpg"  title="Flow" alt="Flow" width="100%" />&nbsp;
  
 </div>
+<details>
+<summary>
 
-## [Automatio and Scrapping Data Frome Linkdin](https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/scraper.py)
+## <a href = "https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/scraper.py">Scraper.py</a>
+</summary>
 
-**Importing Libraries**
+**login(username, passward) :-**
 
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/c037be17-2dad-4247-a7a2-d7f853d3097b)
+The provided function, login, automates the process of logging in to the LinkedIn website using Selenium WebDriver in Python. It opens a Chrome browser, navigates to the LinkedIn Jobs page, enters the provided username and password, and clicks the login button. After a successful login, it prints a confirmation message with the username.
 
-**The provided function, login, automates the process of logging in to the LinkedIn website using Selenium WebDriver in Python. It opens a Chrome browser, navigates to the LinkedIn Jobs page, enters the provided username and password, and clicks the login button. After a successful login, it prints a confirmation message with the username.**
+**page_link()**
 
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/f0c21cd2-067b-40ad-bcac-969663b3b119)
+This function collects and returns a list of job links by searching through a list of job listings on a web page. It identifies the job links by locating anchor tags (<a>) within the job listings, extracts the href attribute containing the link, and appends these links to a list. Additionally, it scrolls down the page to load additional job listings and introduces brief delays between each action to ensure smooth execution. Finally, it returns the list of job links found on the page.
 
-**This function collects and returns a list of job links by searching through a list of job listings on a web page. It identifies the job links by locating anchor tags (<a>) within the job listings, extracts the href attribute containing the link, and appends these links to a list. Additionally, it scrolls down the page to load additional job listings and introduces brief delays between each action to ensure smooth execution. Finally, it returns the list of job links found on the page.**
+**get_links(page_number)**
 
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/df855f60-830a-4db2-862e-0498eb3ad040)
+This function takes an input page_number and collects links from a sequence of pages, starting from the first page and continuing through the specified number of pages. It iterates through these pages by clicking on page number buttons, waiting for page content to load, and then aggregating the links obtained from each page using the page_link function. It prints a message indicating the progress of link extraction on each page. Finally, it returns a consolidated list of links from all the visited pages.
 
-**This function takes an input page_number and collects links from a sequence of pages, starting from the first page and continuing through the specified number of pages. It iterates through these pages by clicking on page number buttons, waiting for page content to load, and then aggregating the links obtained from each page using the page_link function. It prints a message indicating the progress of link extraction on each page. Finally, it returns a consolidated list of links from all the visited pages.**
+**job_info(link)**
 
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/776a01f5-ab85-4064-b375-98fe6e4cb9d9)
+This function takes a link to a job listing page, navigates to that page using a WebDriver, and then scrapes valuable information. It starts by clicking a "See More" button to expand the job listing content. It then attempts to extract details such as the job's location, title, company name, industry, employee count, followers count, job involvement, and more. Additionally, it captures information about the job's description, workplace type, application status, and posting date.
+Finally, this function compiles all the extracted information into a dictionary format and returns it. This dictionary includes key-value pairs representing various job-related attributes, making it easy to organize and utilize this data for further analysis or processing.
 
-**The job_info function is designed to extract various pieces of information from a job listing webpage.:**
+**get_job_info(link_list)**
 
-**This function takes a link to a job listing page, navigates to that page using a WebDriver, and then scrapes valuable information. It starts by clicking a "See More" button to expand the job listing content. It then attempts to extract details such as the job's location, title, company name, industry, employee count, followers count, job involvement, and more. Additionally, it captures information about the job's description, workplace type, application status, and posting date.**
+This function takes a list of job listing links, link_list, as input. It then iterates through each link, using the job_info function to extract detailed information about each job listing. The extracted information is organized into dictionaries, and these dictionaries are appended to a data list. Each dictionary contains various attributes related to the job, such as company name, job title, location, industry, and more.
+</details>
+<details>
+<summary>
+  
+## <a href = "https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/EDA.py">EDA.py</a>
+</summary>
 
-**Finally, this function compiles all the extracted information into a dictionary format and returns it. This dictionary includes key-value pairs representing various job-related attributes, making it easy to organize and utilize this data for further analysis or processing.**
+**city(all_data)** :- This function clean the city column of the data.
 
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/0077db97-b43a-4e88-8037-5f3ccf0bc31e)
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/521e591a-a42d-4f6f-98ec-29bc79ff354d)
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/9709e077-90d6-4858-a380-ff244ae5ca6a)
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/db7c8587-b54e-402f-9714-7a573339d1e2)
+**country(all_data)** :- This function clean the country column of the data.
 
-**This function takes a list of job listing links, link_list, as input. It then iterates through each link, using the job_info function to extract detailed information about each job listing. The extracted information is organized into dictionaries, and these dictionaries are appended to a data list. Each dictionary contains various attributes related to the job, such as company name, job title, location, industry, and more.**
+**state_find(x)** :- this function will take city as input and return state of that city.
 
-![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/87f6ef86-00d6-48e2-932b-4065b0b3e9bf)
+**state(all_data)** :- This function will clean the state column of the data.
+
+**loc(all_data)** :- This function will use above three function and convert one location column into different column and clean as well.
+
+**job(all_data)** :- This function will clean the job column of the data.
+
+**involve(st) & invol(all_data)** :- Both function will work together to clean the Involve column of the data.
+
+**work(all_data)** :- This function will clean the work column of the data.
+
+**find_avg(st) & emp(all_data)** Both function will work together to clean the employee column of the data.
+
+**fol(all_data)** :- This function will clean the follower count column of the data.
+
+**industry(all_data)** :- This function will clean the indusctry column of the data.
+
+**app(all_data)** :- This function will clean the applicants column of the data.
+
+**eda_full(dataframe)** :- This function will take the raw data and use all the above function of the eda and return cleaned data.
+
+ </details>
 
 
 
