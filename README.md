@@ -34,5 +34,7 @@ The primary objective of this project is to gather data from LinkedIn profiles a
 | **[Static](https://github.com/deepakver484/Job-Analytics2/tree/main/ml%20project/static)** | This folder contains all the static files used in the web app |
 | **[Templates](https://github.com/deepakver484/Job-Analytics2/tree/main/ml%20project/templates)** | this folder contains all the html files used in the web app |
 
-# Workflow :
-
+# Project Workflow :
+<div>
+ 
+</div>
