@@ -20,6 +20,7 @@ The primary objective of this project is to gather data from LinkedIn profiles a
   <img src="https://github.com/deepakver484/assets/blob/main/machine-learning-01-svgrepo-com.svg" title="MachineLearning" alt="MachineLearning" width="50" height="50"/>&nbsp;
   <img src="https://github.com/deepakver484/assets/blob/main/icons8-excel.svg"  title="Excel" alt="Excel" width="50" height="50"/>&nbsp;
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib" width="50" height="50"/>
+  <img src="https://github.com/deepakver484/assets/blob/main/icons8-excel.svg"  title="Excel" alt="Excel" width="50" height="50"/>&nbsp;
   <div>
 
 
