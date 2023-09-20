@@ -1,4 +1,5 @@
 # Job-Analytics2
+### Link: - https://jobanalytics.pythonanywhere.com/
 In today's dynamic and competitive job market, staying informed and making informed career decisions is crucial. Project Job-Analytics is a cutting-edge initiative designed to empower job seekers, professionals, and employers with comprehensive insights into the ever-evolving world of employment. This innovative project harnesses the power of data analytics, machine learning, and real-time job market data to provide users with valuable information and trends that can shape their career trajectories and hiring strategies.
 
 
@@ -39,6 +40,8 @@ The primary objective of this project is to gather data from LinkedIn profiles a
   <img src="https://github.com/deepakver484/assets/blob/main/Project%20Flow.jpg"  title="Flow" alt="Flow" width="100%" />&nbsp;
  
 </div>
+
+# Files Description:
 <details>
   <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/scraper.py"><strong>Scraper.py</strong></a></summary>
 
@@ -138,12 +141,195 @@ This function takes a list of job listing links, link_list, as input. It then it
 
   ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/08a20a74-7ee1-48cd-8c47-3d9972f72a9b)
 
+  **get_skills(text)**
+  
+  The get_skills function uses a Natural Language Processing (NLP) model to analyze a given text and extracts skills mentioned within it. It identifies entities labeled as "SKILL" and compiles them into a list, returning this list of extracted skills.
+  ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/57328e43-6dea-4162-be2d-c57ea3b7caa9)
+
+  **Unique_Skills(x)**
+  
+  The unique_skills function takes a list x as input and efficiently removes duplicate elements, returning a comma-separated string containing the unique elements of the input list.
+  ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/56e6f372-cb09-495d-adda-8c4259891dc8)
+
+  **Update_jd(data)**
+  
+  The update_jd function preprocesses textual data, typically job descriptions (JDs). It removes special characters, URLs, usernames, and converts the text to lowercase. Then, it tokenizes the text, lemmatizes words, and removes common English stopwords. Finally, it reassembles the processed text into a cleaned job description and returns it. This function is useful for text data preparation, making it more suitable for analysis or natural language processing tasks.
+
+  ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/25cef4c2-16fc-4808-91c9-9eeb69b963c7)
+
+  **skills_apply(data)**
+  
+  The skills_apply function is designed for processing job data. It takes a DataFrame data as input and performs a series of data transformation steps. It first cleans and tokenizes job descriptions using the update_jd function, then extracts and deduplicates skills from the cleaned descriptions. The unique skills are collected into a comma-separated string using the unique_skills function. If no skills are found, it labels the entry as 'Not-found'. The function returns the modified DataFrame, which now includes a column of cleaned skills for each job listing, making the data more structured and suitable for analysis or further processing.
+
+  ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/1dde5d37-8652-434d-8819-012c32483b5a)
 </details>
+
+<details>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/agent_class.py"><strong>agent_class.py</strong></a></summary>
+**job_class(data)**
+
+The job_class function is used to classify job listings within a DataFrame data into different classes based on several features related to job involvement, workplace type, employee count, followers count, and applicants. It performs the following steps:
+
+It selects relevant columns from the DataFrame.
+It one-hot encodes categorical variables 'involvement' and 'workplace_type' to convert them into numerical format.
+It handles missing values in numerical columns by replacing them with appropriate measures (median or mean).
+It applies K-Means clustering with 4 clusters to the prepared data.
+It assigns class labels to each job listing based on the cluster they belong to.
+It maps the numeric cluster labels to human-readable class names ('Class 1', 'Class 2', 'Class 3', 'Class 4').
+It adds a new column 'job_class' to the DataFrame, indicating the class each job listing falls into, and returns the modified DataFrame, which can be used for further analysis or visualization.
+
+  ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/210bad6f-a967-4a77-ae9f-0f38d3890ab2)
+
+</details>
+
+<details>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/main.py"><strong>main.py</strong></a></summary>
+
+  The job_class function is used to classify job listings within a DataFrame data into different classes based on several features related to job involvement, workplace type, employee count, followers count, and applicants. It performs the following steps:
+
+It selects relevant columns from the DataFrame.
+It one-hot encodes categorical variables 'involvement' and 'workplace_type' to convert them into numerical format.
+It handles missing values in numerical columns by replacing them with appropriate measures (median or mean).
+It applies K-Means clustering with 4 clusters to the prepared data.
+It assigns class labels to each job listing based on the cluster they belong to.
+It maps the numeric cluster labels to human-readable class names ('Class 1', 'Class 2', 'Class 3', 'Class 4').
+It adds a new column 'job_class' to the DataFrame, indicating the class each job listing falls into, and returns the modified DataFrame, which can be used for further analysis or visualization.
+
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/6df330cb-a15f-415a-b4b4-f9a6d90dab5d)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/df152c9f-7dbd-450d-b259-1b7b77cd6d67)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/6162113b-8360-4744-82be-43a5a9ca9a9a)
+
+</details>
+
+<details>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/backend/data_dao.py"><strong>data_dao.py</strong></a></summary>
+
+**skill_job(skills, df)**
+
+ The skill_job function takes two parameters: a skill keyword and a DataFrame (df) containing job-related data. It filters the DataFrame to find job listings that contain the specified skill keyword. It then identifies the most common job level, industry, and job class related to that skill within the filtered data. Additionally, it calculates the total number of jobs associated with the skill. The function returns these results as a dictionary, providing valuable insights into the prevalence and characteristics of job openings related to the specified skill. If no jobs are found for the given skill, it returns a placeholder message indicating the absence of job openings. This function is useful for skill-specific job market analysis.
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/59e50708-c921-4af2-a442-a763da5f3fac)
+
+**skill_details(skills, df)**
+
+The skill_details function takes a skill keyword and a DataFrame (df) containing job-related data as input. It filters the DataFrame to find job listings that contain the specified skill keyword. It then converts the filtered job data into a list of dictionaries, where each dictionary represents the details of a job listing. These details typically include information such as job title, company, location, and other relevant attributes. The function returns this list of job details, providing a convenient way to access and analyze specific job listings related to the given skill. This function is valuable for extracting and processing job-specific information based on a particular skill.
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/ea089a8d-1bdd-460f-9cfa-daa667875c1e)
+
+**job_job(job_title, df)**
+
+The job_job function takes two parameters: a job title keyword and a DataFrame (df) containing job-related data. It filters the DataFrame to find job listings that contain the specified job title keyword. It then identifies the most common job level, industry, and job class related to that job title within the filtered data. Additionally, it calculates the total number of jobs associated with the job title. The function returns these results as a dictionary, providing insights into the prevalent job characteristics and count for the given job title. If no jobs are found for the specified job title, it returns a placeholder message indicating the absence of job openings with that title. This function is useful for analyzing the job market for a particular job title.
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/636878c3-12bb-4580-9ac2-f5392b511bb6)
+
+**job_details(job_title, df)**
+
+ The job_details function takes a job title keyword and a DataFrame (df) containing job-related data as input. It filters the DataFrame to find job listings that contain the specified job title keyword. Subsequently, it converts the filtered job data into a list of dictionaries, with each dictionary representing the details of an individual job listing. These details commonly include information such as job title, company, location, and other pertinent attributes. The function returns this list of job details, offering a convenient means to access and analyze specific job listings associated with the given job title. This function proves valuable for extracting and processing job-specific information for a specific job title of interest.
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/99b350ec-92ac-43d9-8475-5a6158fdf4d4)
+
+ </details> 
+
+<details>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/App_File/app.py"><strong>app.py</strong></a></summary>
+
+  The provided script is a Flask-based web application for job search and skill analysis. It imports necessary modules for web development and data manipulation, reads data from CSV files into DataFrames, and initializes a Flask app. The app consists of multiple routes:
+
+Login and Signup: Users can log in with email and password credentials. If the user doesn't have an account, they can sign up.
+
+Home Page: The main page allows users to search for skills, displaying the most common job level, industry, and job class related to the skill. Users can also click for skill details.
+
+Skill Details Page: Displays detailed information about jobs related to a specific skill, including job titles, companies, and locations.
+
+Job Search Page: Allows users to search for job titles and displays the most common job level, industry, and job class for the specified job title. Users can also click for job details.
+
+Job Details Page: Shows detailed information about jobs related to a specific job title, including job descriptions, companies, and locations.
+
+Dashboard and About Page: Additional pages for user interaction and information.
+
+The application uses CSV data files for job listings and user credentials, enabling users to search for jobs, skills, and access related details. It provides a user-friendly interface for job seekers and skill analysis enthusiasts.
+
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/3658491c-ac28-49c9-8e55-df6d74b980bf)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/0450183d-acd8-4ffe-9612-c79aff22f525)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/2d00ac1c-20af-4718-a6b5-a8f9aa0f1fe9)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/271e19f0-5a0a-4a15-8882-c0682b01bcf7)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/387b1415-c4b6-4b73-915e-c275708cfc12)
+
+
+
+
+
+  
+
 
 ## Insights
 ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/5c17566a-c25e-46a4-94b7-775b1f89df44)
 ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/28991083-d842-46b2-823b-4ec8cc818566)
 ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/d28f6903-69d7-40e0-a082-e04e32ca60bd)
+
+## Web Page
+
+### Job Analytics Dashboard
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/fad60022-2133-41e5-8a7a-ba8fa7beffda)
+
+### Job Analytics Job Search
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/2c46082c-e41c-4371-8cbe-578d0a34c9ae)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/a13acf8e-1c58-4981-ad66-32efe07d1baa)
+
+
+### Job Analytics Skills Search
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/8db47e93-d2d3-4261-bb51-b42eb5644837)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/24ebf9b4-6ceb-47bb-ac9b-2d40b6c62ab3)
+
+
+
+## Challengs Faced
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/0131d015-a300-4354-83bf-4b57021adee6)
+
+## Learnings
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/ca4b579d-c360-4c25-adf0-292b548e5386)
+
+
+## Future Scope
+The future scope of job analytics is poised for significant growth and innovation. The integration of a fake job removal model and the expansion to include data scraping from multiple job sites are two key developments that will shape the future of this field.
+
+### Fake Job Removal Model:
+
+As job boards and online marketplaces continue to grow, so does the risk of fraudulent job postings. To maintain the integrity of job analytics and provide job seekers with reliable information, the integration of a fake job removal model is essential. Here's how it will contribute to the future of job analytics:
+
+**Enhanced Data Quality:** The removal of fake job listings ensures that job analytics platforms offer accurate and reliable data. This leads to better insights for job seekers and employers alike.
+
+**Trust and Credibility:** Job seekers will trust platforms that actively filter out fake jobs. This will boost user confidence and encourage more people to use job analytics services.
+
+**Improved Matching Algorithms:** Fake job removal will refine the data used for job matching algorithms, leading to better job recommendations for job seekers.
+
+**Fighting Fraud:** Such models will contribute to the broader effort of combating fraudulent job postings, which can have serious consequences for job seekers.
+
+### Scraping from Multiple Sites:
+
+Expanding data sources to include scraping from multiple job sites is another significant step in the future of job analytics. Here are the advantages:
+
+**Comprehensive Insights:** Access to a broader range of job listings from different platforms will provide a more comprehensive view of the job market. This can help job seekers make more informed decisions.
+
+**Diverse Job Opportunities:** Job seekers will benefit from a wider selection of job opportunities, including those that may be exclusive to specific platforms.
+
+**Market Trends:** Gathering data from multiple sources enables the tracking of job market trends more effectively. This data can be invaluable for policymakers, workforce planners, and businesses.
+
+**Competitive Analysis:** Employers can use insights from multiple job sites to gain a competitive advantage in attracting top talent by understanding trends in compensation, benefits, and job demand.
+
+**Geographic Insights:** Scrapping data from various sites can also provide location-specific insights into job markets, helping job seekers find opportunities in their preferred regions.
+
+### Advanced Analytics:
+
+The future of job analytics will also see advancements in data analytics techniques. Machine learning and AI will play a crucial role in predicting job trends, analyzing skill requirements, and providing personalized career advice to job seekers.
+
+### Personalization:
+
+Job analytics will become more personalized, taking into account a user's unique skills, experience, and preferences. This will lead to more accurate job recommendations, reducing the time and effort job seekers need to find the right opportunities.
+
+### Ethical Considerations:
+
+As job analytics continues to grow, there will be increased attention to ethical considerations, including data privacy, bias in algorithms, and fair job matching practices. These issues will shape the way job analytics platforms operate in the future.
+
+In conclusion, the future of job analytics is exciting, with advancements in data quality, data sources, and analytical techniques. The integration of a fake job removal model and data scraping from multiple job sites will be pivotal in providing more reliable, comprehensive, and valuable insights to job seekers and employers alike. However, it's important to navigate these developments ethically and with a strong focus on user trust and data privacy.
+
+
 
 
 
