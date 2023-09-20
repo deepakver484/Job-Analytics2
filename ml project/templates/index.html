@@ -1,43 +1,59 @@
-
 {% extends 'base.html' %}
-{% block title %}Skill{% endblock title %}Skill
+
+<!-- Setting the title of the page to 'Skill' -->
+{% block title %}Skill{% endblock title %}
+
+<!-- Marking the 'Skill' link in the navigation bar as active -->
 {% block skill %}active{% endblock skill %}
+
 {% block body %}
-    <!-- <h1>Job Search</h1> -->
+    <!-- Skill Search Form Section -->
     <form action="/home" method="POST">
-    <div class="job_search">
-        <button class="header_head">Search your Skill</button>
-        <div class="search_box">
-            <input type="text" name="skill" placeholder= "{{data['placeholder']}}">
-            <button class="search" type="submit">Search</button>
-            <button class="all_jobs" type="submit", formaction="/skilldetails">All jobs</button>
+        <div class="job_search">
+            <!-- Button to initiate the skill search -->
+            <button class="header_head">Search your Skill</button>
+            <div class="search_box">
+                <!-- Input field to enter the skill -->
+                <input type="text" name="skill" placeholder="{{data['placeholder']}}">
+                <!-- Button to submit the skill search form -->
+                <button class="search" type="submit">Search</button>
+                <!-- Button to view all jobs related to the skill -->
+                <button class="all_jobs" type="submit" formaction="/skilldetails">All jobs</button>
+            </div>
         </div>
-    </div>
     </form>
 
+    <!-- Results Section -->
     <div class="results">
+        <!-- Box to display the most common experience level related to the skill -->
         <div class="result_box">
-            <p>Most Common Expereince Level</p>
+            <p>Most Common Experience Level</p>
             <h1>{{data['mcel']}}</h1>
         </div>
+        <!-- Box to display the most common industry type related to the skill -->
         <div class="result_box">
             <p>Most Common Industry Type</p>
             <h1>{{data['mci']}}</h1>
         </div>
+        <!-- Box to display the most common company class related to the skill -->
         <div class="result_box">
             <p>Most Common Company Class</p>
             <h1>{{data['mccc']}}</h1>
         </div>
+        <!-- Box to display the total number of jobs available related to the skill -->
         <div class="result_box">
             <p>Total Number Of Jobs Available</p>
             <h1>{{data['tn']}}</h1>
         </div>
     </div>
 
+    <!-- All Job Listings Section -->
     <div class="all_job_parent">
+        <!-- Loop through details of jobs related to the skill -->
         {% for row in details %}
         <div class="job_parent">
             <div class="job_child">
+                <!-- Displaying job details -->
                 <h1>Company: <span>{{row['company_name']}}</span></h1>
                 <h3>Job Title: <span>{{row['job_title']}}</span>
                      | Job Type: <span>{{row['involvement']}} ({{row['level']}})</span>
@@ -49,10 +65,11 @@
                      | Location: <span>{{row['city']}}, {{row['state']}}, {{row['country']}}</span>
                 </h4>
             </div>
+            <!-- Button to apply for the job -->
             <div> <a href="{{row['link']}}" class="apply_btn">Apply Now</a>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    {% endblock body %}
+{% endblock body %}
