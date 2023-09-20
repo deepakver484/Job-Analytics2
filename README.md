@@ -251,12 +251,40 @@ The application uses CSV data files for job listings and user credentials, enabl
 ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/271e19f0-5a0a-4a15-8882-c0682b01bcf7)
 ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/387b1415-c4b6-4b73-915e-c275708cfc12)
 
+</details>
 
+<details>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/templates/base.html"><strong>base.html</strong></a></summary>
 
+  The provided HTML template is a foundation for web pages within a web application. It includes essential elements such as meta tags for character encoding and viewport settings, external CSS styling, and a navigation bar. The navigation bar consists of links to various sections of the website, including a dashboard, job search, skill search, about us, and contact us. These links are designed to be overridden with active styling based on the current page. The template also defines a block for the main content, which can be customized by child templates. Additionally, it includes a reference to the Font Awesome icons library for icon usage. This template serves as a structured layout for building web pages with consistent navigation and styling elements.
+  ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/c10192ab-3c83-47b3-93d6-dc3a417ec970)
+  ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/747619ce-2f01-478d-9dab-4ff1cb0a72bf)
+</details>
 
+<details>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/templates/index.html"><strong>index.html</strong></a></summary>
 
+  This HTML template extends the 'base.html' template, customizing it for the "Skill Search" page of a web application. It sets the title of the page to 'Skill' and marks the 'Skill' link in the navigation bar as active. The template includes several sections:
+
+**Skill Search Form Section:** This section contains a form for searching for skills. It includes an input field to enter a skill, buttons to initiate the search and view all jobs related to the skill, and a placeholder for displaying search suggestions.
+
+**Results Section:** This section displays the most common experience level, industry type, company class, and the total number of jobs available related to the searched skill.
+
+**All Job Listings Section:** This section displays details of all job listings related to the skill. It iterates through job details and presents information such as company name, job title, job type, industry, applicants, followers, employees, and location. Each job listing also includes a button to apply for the job.
+
+Overall, this HTML template provides a structured layout for the "Skill Search" page, allowing users to search for skills, view related job details, and access relevant information.
+
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/dba80083-e398-4bee-9847-e7a628b5ee7c)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/fb44d0b9-07d5-4469-b941-e1c96d74840e)
+![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/f0001c7c-c133-4083-bd27-841bcb73baae)
+
+</details>
+
+<details>
+  <summary><a href="https://github.com/deepakver484/Job-Analytics2/blob/main/ml%20project/static/index.css"><strong>index.css</strong></a></summary>
+This file contains all the css style for the website
+</details>
   
-
 
 ## Insights
 ![image](https://github.com/deepakver484/Job-Analytics2/assets/83640385/5c17566a-c25e-46a4-94b7-775b1f89df44)
